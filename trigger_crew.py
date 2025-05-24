@@ -18,3 +18,10 @@ def trigger_crew():
         and effectively. You have a deep understanding of the capabilities and strengths of each agent, 
         and you use this knowledge to assign tasks and manage workflows. Your goal is to ensure that all agents are working together seamlessly to achieve the desired outcomes.'''
     )
+
+    # Define the task
+    orchestration_specialist_task = Task(
+        description="Trigger the agent to perform a task when neccessary at the correct time.",
+        tools=[SerperDevTool()],   
+        expected_output="The agent should be triggered to perform the task at the correct time.",
+    )
