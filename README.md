@@ -1,2 +1,12 @@
 # FakeNews-Detector-using-Agentic-AI
-This is developed using CrewAI framework which helps to easily identify fake news.
+
+# Working
+
+This application takes News as input and the same gets verified with many sources across the Internet including websites, articles, etc. and provides output if the News is Genuine or Fake with a detailed well written explanation. 
+
+# Tools used
+- Developed using CrewAI (an Agentic AI framework). 
+
+- MCP Server
+
+- Agent2Agent Protocol
