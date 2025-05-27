@@ -7,6 +7,4 @@ This application takes News as input and the same gets verified with many source
 # Tools used
 - Developed using CrewAI (an Agentic AI framework). 
 
-- MCP Server
-
 - Agent2Agent Protocol
