@@ -2,3 +2,4 @@ streamlit
 crewai
 crewai-tools
 python-dotenv
+plotly

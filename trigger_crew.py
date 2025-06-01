@@ -8,6 +8,8 @@ import json
 import os
 import re 
 
+import time 
+
 def extract_json_from_markdown(text: str):
 
     json_block_pattern = re.compile(r'```json\s*(.*?)\s*```', re.DOTALL)
@@ -18,13 +20,15 @@ def extract_json_from_markdown(text: str):
         try:
             # Attempt to parse the first match as JSON
             parsed_json = json.loads(matches[0])
-            
+
         except json.JSONDecodeError:
             print("Failed to decode JSON from the provided text.")
 
     return parsed_json
 
-def trigger_crew(news_headline_or_topic):
+def fact_check_crew(news_headline_or_topic):
+
+    start_time = time.time() # Start timing the execution
 
     # Defining Tools
     # =============================================================================
@@ -221,5 +225,8 @@ def trigger_crew(news_headline_or_topic):
 
     # Extracting the final report from the result
     final_report = extract_json_from_markdown(result.raw)
+
+    end_time = time.time() # End timing the execution
+    execution_time = end_time - start_time
 
     return final_report
