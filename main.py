@@ -484,7 +484,7 @@ def main():
     # --- Main Content ---
     create_header()
 
-    st.markdown("### 📝 Enter News or Claim to Fact-Check")
+    st.markdown("### 📝 Enter News or Topic to Fact-Check")
     
     user_input = st.text_area(
         label="Please enter a claim or news headline to analyze:",
@@ -502,7 +502,7 @@ def main():
     col_empty1, col_btn, col_empty2 = st.columns([1, 2, 1])
     with col_btn:
         if not st.session_state.is_processing:
-            analyze_button = st.button("🔍 Analyze Claim", use_container_width=True, key="analyze_claim_btn")
+            analyze_button = st.button("Analyze Claim", use_container_width=True, key="analyze_claim_btn")
         else:
             st.button("🔍 Analyzing...", use_container_width=True, disabled=True, key="analyzing_btn")
             analyze_button = False
