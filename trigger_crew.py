@@ -30,6 +30,11 @@ def fact_check_crew(news_headline_or_topic):
 
     start_time = time.time() # Start timing the execution
 
+    llm_api_key = os.getenv('GEMINI_API_KEY') # SET your Desired LLM API Key in .env file as <PROVIDER_API_KEY> (e.g., GEMINI_API_KEY, OPENAI_API_KEY, etc.)
+
+    if not llm_api_key:
+        raise ValueError("LLM_API_KEY environment variable is not set in the .env file. Please set it to your desired LLM API key.")
+    
     # Defining Tools
     # =============================================================================
 
@@ -37,7 +42,7 @@ def fact_check_crew(news_headline_or_topic):
     llm = LLM(
         model="gemini/gemini-2.0-flash", # call model by provider/model_name
         temperature=0.8, # 0.8 is default
-        api_key=os.getenv('GEMINI_API_KEY')
+        api_key=llm_api_key, # Set your LLM API Key here
     )
 
     # Tool 2 - Serper API for Web Search
