@@ -536,7 +536,7 @@ def main():
             for progress, message in progress_steps:
                 progress_bar.progress(progress)
                 status_text.text(message)
-                time.sleep(2.0)  # Small delay for visual effect
+                time.sleep(10.0)  # Small delay for visual effect
             
             # Call the fact-checking crew
             result = fact_check_crew(news_headline_or_topic=user_input)
